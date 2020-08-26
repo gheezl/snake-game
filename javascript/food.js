@@ -1,14 +1,31 @@
 import { onSnake, expandSnake } from "./snake.js"
+import { randomGridPosition } from "./grid.js"
 
-let foodPosition = { x: 20, y: 10 }
+// this sets the original food position as well as the new one
+
+const getRandomFoodPosition = () => {
+    let newFoodPosition = { x: 25, y: 10 }
+    while (newFoodPosition === null || onSnake(newFoodPosition)) {
+        newFoodPosition = randomGridPosition()
+    }
+    return newFoodPosition
+}
+
+// these are some variables
+
+let foodPosition = getRandomFoodPosition()
 const EXPANSION_RATE = 1
+
+// this function moves the food location after the snake eats it
 
 export const updateFood = () => {
     if (onSnake(foodPosition)) {
         expandSnake(EXPANSION_RATE)
-        foodPosition = { x: 20, y: 20 }
+        foodPosition = getRandomFoodPosition()
     }
 }
+
+// this creates the food
 
 export const drawFood = (gameBoard) => {
     const foodElement = document.createElement("div")
@@ -17,3 +34,6 @@ export const drawFood = (gameBoard) => {
     foodElement.classList.add("food")
     gameBoard.appendChild(foodElement)
 }
+
+
+

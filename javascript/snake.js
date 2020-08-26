@@ -20,6 +20,7 @@ export const updateSnake = () => {
 }
 
 export const drawSnake = (gameBoard) => {
+    addSegments()
     snakeBody.map(segment => {
         const snakeElement = document.createElement("div")
         snakeElement.style.gridRowStart = segment.y
@@ -34,12 +35,28 @@ export const expandSnake = (amount) => {
     newSegments += amount
 }
 
-export const onSnake = (position) => {
-    return snakeBody.some(segment => {
+export const onSnake = (position, ignoreHead) => {
+    return snakeBody.some((segment, index) => {
+        if (ignoreHead && index === 0) return false
         return equalPositions(segment, position)
     })
 }
 
 export const equalPositions = (position1, position2) => {
     return position1.x === position2.x && position1.y === position2.y
+}
+
+export const addSegments = () => {
+    for (let i = 0; i < newSegments; i++)
+        snakeBody.push({ ...snakeBody[snakeBody.length - 1] })
+
+    newSegments = 0
+}
+
+export const getSnakeHead = () => {
+    return snakeBody[0]
+}
+
+export const snakeIntersection = () => {
+    return onSnake(snakeBody[0], { ignoreHead: true })
 }
