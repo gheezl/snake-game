@@ -8,8 +8,6 @@
 </head>
 <style>
     body {
-        height: 100vw;
-        width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,11 +16,29 @@
     }
 
     #game-board {
+        display: grid;
+        grid-template-rows: repeat(50, 1fr);
+        grid-template-columns: repeat(50, 1fr);
         background-color: white;
+        margin-top: 100px;
         width: 75vmin;
         height: 75vmin;
     }
+
+    .snake {
+        background-color: black;
+        border: 1px solid black;
+        box-shadow: 1px 1px whitesmoke;
+    }
+
+    .food {
+        background-color: red;
+        border: 1px solid black;
+        box-shadow: 1px 1px whitesmoke;
+    }
 </style>
+
+<script src="./javascript/game.js" defer type="module"></script>
 
 <body>
     <div id="game-board">
