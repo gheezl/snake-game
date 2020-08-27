@@ -2,22 +2,23 @@ import { onSnake } from "./snake.js"
 import { randomGridPosition } from "./grid.js"
 
 
-let obsticalePositions = [
+export let obsticalePositions = [
     { x: 10, y: 25 },
     { x: 25, y: 45 },
-    { x: 40, y: 25 }
+    { x: 40, y: 25 },
+    { x: 40, y: 45 },
+    { x: 10, y: 45 },
 ]
 
 // updates obsticale
 
-export const updateObsticale = () => {
-    obsticalePositions.map(obsticale => {
-        if (onSnake(obsticale)) {
-            obsticale = randomGridPosition()
-        }
-    })
-
-}
+// export const updateObsticale = () => {
+//     obsticalePositions.map(obsticale => {
+//         if (onSnake(obsticale)) {
+//             obsticale = randomGridPosition()
+//         }
+//     })
+// }
 
 // this draws the obsticale
 

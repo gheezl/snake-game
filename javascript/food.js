@@ -1,4 +1,5 @@
 import { onSnake } from "./snake.js"
+import { obsticalePositions } from "./obsticales.js"
 import { randomGridPosition } from "./grid.js"
 
 // this sets the original food position as well as the new one
@@ -14,13 +15,17 @@ const getRandomFoodPosition = () => {
 // these are some variables
 
 let foodPosition = getRandomFoodPosition()
-const EXPANSION_RATE = 1
 
 // this function moves the food location after the snake eats it
 
 export const updateFood = () => {
     if (onSnake(foodPosition)) {
         foodPosition = getRandomFoodPosition()
+        obsticalePositions[0] = randomGridPosition()
+        obsticalePositions[1] = randomGridPosition()
+        obsticalePositions[2] = randomGridPosition()
+        obsticalePositions[3] = randomGridPosition()
+        obsticalePositions[4] = randomGridPosition()
     }
 }
 
