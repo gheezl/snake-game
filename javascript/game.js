@@ -57,3 +57,9 @@ const draw = () => {
 const checkDeath = () => {
     gameOver = outSideGrid(getSnakeHead()) || checkObsticale()
 }
+
+// testing custimazation
+
+export const changeBoxGlow = () => {
+    document.getElementById("snake").style.boxShadow = "black"
+}
