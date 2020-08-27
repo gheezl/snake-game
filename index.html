@@ -28,14 +28,14 @@
         grid-template-rows: repeat(50, 1fr);
         grid-template-columns: repeat(50, 1fr);
         background-color: #152642;
-        border: 2px solid white;
+        border: 2px solid #2F4562;
         height: 50vw;
         width: 50vw;
     }
 
     .snake {
         background-color: black;
-        box-shadow: 0 0 2px lightblue;
+        box-shadow: 0 0 5px lightblue;
     }
 
     .food {
@@ -61,8 +61,6 @@
     }
 
     .welcome {
-        display: flex;
-        justify-content: center;
         padding: 25px;
     }
 
@@ -73,12 +71,20 @@
         background-color: #071225;
         color: white;
     }
+
+    .arrows {
+        margin-top: 50px;
+    }
+
+    .instructions {
+        padding: 25px;
+    }
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
 
 <body>
     <header class="header">
-        <h1>Collect the Rings</h1>
+        <h1 class="title">Collect the Rings</h1>
         <span class="welcome">
             The goal of this game is to collect as many rings as possible, as quickly as possible.
             If you touch a red dot or hit the sides of the game board, then you lose the game.
@@ -86,12 +92,14 @@
         <span class="welcome">
             If you create an account and sign in, then your high score will be saved automatically.
         </span>
+        <img class="arrows" src="Arrow_keys.svg.png" width="250px" />
+        <span class="instructions">Use your arrow keys to move your square.</span>
     </header>
 
     <div id="game-board"></div>
 
     <div class="other">
-        hi
+
     </div>
 </body>
 
