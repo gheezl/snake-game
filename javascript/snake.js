@@ -35,7 +35,6 @@ export const drawSnake = (gameBoard) => {
 
 export const onSnake = (position) => {
     return equalPositions(snakeBody, position)
-
 }
 
 export const equalPositions = (position1, position2) => {

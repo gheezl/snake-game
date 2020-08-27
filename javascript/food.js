@@ -3,6 +3,7 @@ import { obsticalePositions } from "./obsticales.js"
 import { randomGridPosition } from "./grid.js"
 
 // this sets the original food position as well as the new one
+
 let newFoodPosition = { x: 25, y: 10 }
 
 const getRandomFoodPosition = () => {
@@ -15,8 +16,9 @@ const getRandomFoodPosition = () => {
 // these are some variables
 
 let foodPosition = getRandomFoodPosition()
+export let time = 0
 
-// this function moves the food location after the snake eats it
+// this function moves the food and obsticale locations after the snake eats the food
 
 export const updateFood = () => {
     if (onSnake(foodPosition)) {
@@ -26,8 +28,20 @@ export const updateFood = () => {
         obsticalePositions[2] = randomGridPosition()
         obsticalePositions[3] = randomGridPosition()
         obsticalePositions[4] = randomGridPosition()
+        time = 0
     }
 }
+
+// this is the timer
+
+
+export const myTimer = () => {
+    time += 1
+    console.log(time)
+    return
+}
+
+setInterval(myTimer(), 1000)
 
 // this creates the food
 
