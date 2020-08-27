@@ -1,5 +1,6 @@
-import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead, snakeIntersection } from "./snake.js"
+import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead } from "./snake.js"
 import { updateFood, drawFood } from "./food.js"
+import { updateObsticale, drawObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
 
 let lastRenderTime = 0
@@ -38,6 +39,7 @@ window.requestAnimationFrame(main)
 const update = () => {
     updateSnake()
     updateFood()
+    updateObsticale()
 }
 
 // draws everything
@@ -46,6 +48,7 @@ const draw = () => {
     gameBoard.innerHTML = ''
     drawSnake(gameBoard)
     drawFood(gameBoard)
+    drawObsticale(gameBoard)
 }
 
 // checks for game over
@@ -53,4 +56,3 @@ const draw = () => {
 const checkDeath = () => {
     gameOver = outSideGrid(getSnakeHead())
 }
-//  || snakeIntersection()

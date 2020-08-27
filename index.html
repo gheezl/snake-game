@@ -7,11 +7,19 @@
     <title>Snake</title>
 </head>
 <style>
+    @font-face {
+        font-family: 'Eight Bit Dragon Regular';
+        font-style: normal;
+        font-weight: normal;
+        src: local('Eight Bit Dragon Regular'), url('eight-bit-dragon.woff') format('woff');
+    }
+
     body {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         margin: 0;
         background-color: black;
+        font-family: 'Eight Bit Dragon Regular';
     }
 
     #game-board {
@@ -31,10 +39,15 @@
     }
 
     .food {
-        /* background-color: white; */
         border: 2px solid white;
         border-radius: 100%;
         box-shadow: 1px whitesmoke;
+    }
+
+    .obsticale {
+        border: 2px solid red;
+        border-radius: 100%;
+        background-color: red;
     }
 
     .header {
