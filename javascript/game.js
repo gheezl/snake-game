@@ -2,6 +2,7 @@ import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead } from "./snake.js"
 import { updateFood, drawFood } from "./food.js"
 import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
+import { displayScore } from "./score.js"
 
 let lastRenderTime = 0
 let gameOver = false
@@ -23,11 +24,12 @@ const main = (currentTime) => {
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
 
     lastRenderTime = currentTime
-    console.log("hi")
+    // console.log("hi")
 
     update()
     draw()
     checkDeath()
+    displayScore()
 }
 
 // initial run of the game loop

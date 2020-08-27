@@ -79,6 +79,10 @@
     .instructions {
         padding: 25px;
     }
+
+    .score-board {
+        margin-top: 25px;
+    }
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
 
@@ -94,12 +98,17 @@
         </span>
         <img class="arrows" src="Arrow_keys.svg.png" width="250px" />
         <span class="instructions">Use your arrow keys to move your square.</span>
+
     </header>
 
     <div id="game-board"></div>
 
     <div class="other">
-
+        <div class="score-board">
+            <span>Your score:</span>
+            <span id="score"></span>
+            <span id="time"></span>
+        </div>
     </div>
 </body>
 
