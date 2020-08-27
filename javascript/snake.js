@@ -9,8 +9,8 @@ let newSegments = 0
 
 const snakeBody = [
     { x: 25, y: 25 },
-    { x: 24, y: 25 },
-    { x: 23, y: 25 }
+    // { x: 24, y: 25 },
+    // { x: 23, y: 25 }
 ]
 
 // updates the snake location

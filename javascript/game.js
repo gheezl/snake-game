@@ -10,7 +10,10 @@ const gameBoard = document.getElementById("game-board")
 
 const main = (currentTime) => {
     if (gameOver) {
-        return alert("Game Over")
+        if (confirm("Game Over. Press Enter to restart the game.")) {
+            window.location = "/"
+        }
+        return
     }
 
     window.requestAnimationFrame(main)
