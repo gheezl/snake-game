@@ -1,6 +1,6 @@
 import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead } from "./snake.js"
 import { updateFood, drawFood } from "./food.js"
-import { drawObsticale } from "./obsticales.js"
+import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
 
 let lastRenderTime = 0
@@ -53,5 +53,5 @@ const draw = () => {
 // checks for game over
 
 const checkDeath = () => {
-    gameOver = outSideGrid(getSnakeHead())
+    gameOver = outSideGrid(getSnakeHead()) || checkObsticale()
 }

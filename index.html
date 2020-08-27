@@ -18,7 +18,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         margin: 0;
-        background-color: black;
+        background-color: #071225;
         font-family: 'Eight Bit Dragon Regular';
     }
 
@@ -27,33 +27,50 @@
         grid-column-start: 2;
         grid-template-rows: repeat(50, 1fr);
         grid-template-columns: repeat(50, 1fr);
-        background-color: black;
-        border: 2px solid red;
+        background-color: #152642;
+        border: 2px solid white;
         height: 50vw;
         width: 50vw;
     }
 
     .snake {
         background-color: black;
-        border: 1px solid blue;
+        box-shadow: 0 0 2px lightblue;
     }
 
     .food {
         border: 2px solid white;
         border-radius: 100%;
-        box-shadow: 1px whitesmoke;
+        box-shadow: 0 0 30px white;
     }
 
     .obsticale {
         border: 2px solid red;
         border-radius: 100%;
         background-color: red;
+        box-shadow: 0 0 5px black;
     }
 
     .header {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         grid-column-start: 1;
+        color: white;
+        background-color: #071225;
+    }
+
+    .welcome {
+        display: flex;
         justify-content: center;
+        padding: 25px;
+    }
+
+    .other {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #071225;
         color: white;
     }
 </style>
@@ -62,9 +79,19 @@
 <body>
     <header class="header">
         <h1>Collect the Rings</h1>
+        <span class="welcome">
+            The goal of this game is to collect as many rings as possible, as quickly as possible.
+            If you touch a red dot or hit the sides of the game board, then you lose the game.
+        </span>
+        <span class="welcome">
+            If you create an account and sign in, then your high score will be saved automatically.
+        </span>
     </header>
-    <div id="game-board">
 
+    <div id="game-board"></div>
+
+    <div class="other">
+        hi
     </div>
 </body>
 

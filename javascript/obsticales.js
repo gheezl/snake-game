@@ -1,6 +1,6 @@
 import { onSnake } from "./snake.js"
-import { randomGridPosition } from "./grid.js"
 
+// these are the obsticale positions
 
 export let obsticalePositions = [
     { x: 10, y: 25 },
@@ -10,15 +10,19 @@ export let obsticalePositions = [
     { x: 10, y: 45 },
 ]
 
-// updates obsticale
+// checks if the square is on the obsticale
 
-// export const updateObsticale = () => {
-//     obsticalePositions.map(obsticale => {
-//         if (onSnake(obsticale)) {
-//             obsticale = randomGridPosition()
-//         }
-//     })
-// }
+export const checkObsticale = () => {
+    let isOnObsticale = false
+
+    obsticalePositions.map(obsticalePosition => {
+        if (onSnake(obsticalePosition)) return isOnObsticale = true
+
+        return false
+    })
+
+    return isOnObsticale
+}
 
 // this draws the obsticale
 
