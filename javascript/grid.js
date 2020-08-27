@@ -1,4 +1,6 @@
-const GRID_SIZE = 51
+const GRID_SIZE = 50
+
+// generates a random grid position
 
 export const randomGridPosition = () => {
     return {
@@ -7,9 +9,11 @@ export const randomGridPosition = () => {
     }
 }
 
-export const outSideGrid = () => {
+// scans to see if you are outside the grid
+
+export const outSideGrid = (position) => {
     return (
         position.x < 1 || position.x > GRID_SIZE ||
-        position.y < 1 || position.x > GRID_SIZE
+        position.y < 1 || position.y > GRID_SIZE
     )
 }

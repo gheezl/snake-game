@@ -2,10 +2,10 @@ import { onSnake, expandSnake } from "./snake.js"
 import { randomGridPosition } from "./grid.js"
 
 // this sets the original food position as well as the new one
+let newFoodPosition = { x: 25, y: 10 }
 
 const getRandomFoodPosition = () => {
-    let newFoodPosition = { x: 25, y: 10 }
-    while (newFoodPosition === null || onSnake(newFoodPosition)) {
+    while (onSnake(newFoodPosition)) {
         newFoodPosition = randomGridPosition()
     }
     return newFoodPosition
