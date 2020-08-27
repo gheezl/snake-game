@@ -57,6 +57,7 @@
         align-items: center;
         grid-column-start: 1;
         color: white;
+        margin-top: 25px;
         background-color: #071225;
     }
 
@@ -81,7 +82,17 @@
     }
 
     .score-board {
+        display: flex;
+        flex-direction: row;
         margin-top: 25px;
+    }
+
+    .your-score {
+        margin-right: 10px;
+    }
+
+    .score {
+        margin-right: 10px;
     }
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
@@ -96,8 +107,8 @@
         <span class="welcome">
             If you create an account and sign in, then your high score will be saved automatically.
         </span>
-        <img class="arrows" src="Arrow_keys.svg.png" width="250px" />
-        <span class="instructions">Use your arrow keys to move your square.</span>
+        <!-- <img class="arrows" src="Arrow_keys.svg.png" width="250px" /> -->
+        <span class="instructions">Use your keyboards arrow keys to move the square.</span>
 
     </header>
 
@@ -105,9 +116,8 @@
 
     <div class="other">
         <div class="score-board">
-            <span>Your score:</span>
-            <span id="score"></span>
-            <span id="time"></span>
+            <h1 class="your-score">Your score:</h1>
+            <h1 class="score" id="score"></h1>
         </div>
     </div>
 </body>

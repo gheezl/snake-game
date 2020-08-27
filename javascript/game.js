@@ -1,5 +1,5 @@
 import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead } from "./snake.js"
-import { updateFood, drawFood } from "./food.js"
+import { updateFood, drawFood, score } from "./food.js"
 import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
 import { displayScore } from "./score.js"
@@ -12,7 +12,7 @@ const gameBoard = document.getElementById("game-board")
 
 const main = (currentTime) => {
     if (gameOver) {
-        if (confirm("Game Over. Press Enter to restart the game.")) {
+        if (confirm(`Game Over. Your final score is ${score} points. Press Enter to restart the game.`)) {
             window.location = "/"
         }
         return
@@ -24,12 +24,12 @@ const main = (currentTime) => {
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
 
     lastRenderTime = currentTime
-    // console.log("hi")
 
     update()
     draw()
     checkDeath()
     displayScore()
+    // checkForInitialEat()
 }
 
 // initial run of the game loop

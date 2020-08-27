@@ -18,7 +18,15 @@ const getRandomFoodPosition = () => {
 let foodPosition = getRandomFoodPosition()
 export let time = 0
 export let score = 0
+let interval = null
 
+// this is the timer
+
+
+export const myTimer = () => {
+    time = time + 1
+    return
+}
 
 // this function moves the food and obsticale locations after the snake eats the food
 
@@ -30,23 +38,16 @@ export const updateFood = () => {
         obsticalePositions[2] = randomGridPosition()
         obsticalePositions[3] = randomGridPosition()
         obsticalePositions[4] = randomGridPosition()
-        console.log(time)
         score += (10 - time)
         time = 0
-        interval()
+        if (interval) {
+            clearInterval(interval)
+        }
+        interval = setInterval(myTimer, 1000)
     }
-
 }
 
-// this is the timer
 
-
-export const myTimer = () => {
-    time = time + 1
-    return
-}
-
-let interval = setInterval(myTimer, 1000)
 
 // this creates the food
 

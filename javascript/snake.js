@@ -4,10 +4,10 @@ import { getInputDirection } from "./input.js"
 
 export const SNAKE_SPEED = 50
 
+
 // initail snake location
 
 const snakeBody = { x: 25, y: 25 }
-
 
 // updates the snake location
 
