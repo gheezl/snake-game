@@ -1,4 +1,4 @@
-import { updateSnake, drawSnake, getSnakeHead } from "./snake.js"
+import { updateSnake, drawSnake, getSnakeHead } from "./cube.js"
 import { updateFood, drawFood, score } from "./food.js"
 import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
@@ -8,6 +8,8 @@ let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById("game-board")
 let gameSpeed = 50
+
+// this sets the difficulty
 
 const setSpeed = (speed, difficulty) => {
     gameSpeed = speed
@@ -44,7 +46,6 @@ const main = (currentTime) => {
     draw()
     checkDeath()
     displayScore()
-    // checkForInitialEat()
 }
 
 // initial run of the game loop

@@ -1,4 +1,4 @@
-import { onSnake } from "./snake.js"
+import { onSnake } from "./cube.js"
 
 // these are the obsticale positions
 

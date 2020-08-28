@@ -1,4 +1,4 @@
-import { onSnake } from "./snake.js"
+import { onSnake } from "./cube.js"
 import { obsticalePositions } from "./obsticales.js"
 import { randomGridPosition } from "./grid.js"
 
