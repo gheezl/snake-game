@@ -2,7 +2,8 @@ import { getInputDirection } from "./input.js"
 
 // a few variables
 
-export const SNAKE_SPEED = 50
+// export const snakeSpeed = 50
+
 
 
 // initail snake location
@@ -21,7 +22,7 @@ export const updateSnake = () => {
     snakeBody.y += inputDirection.y
 }
 
-// draws the initial snake location and sets the color
+// sets the color
 
 const colors = [
     [false, "black"],
@@ -36,9 +37,11 @@ const setColor = (input) => {
     colors.map(color => {
         if (input === color[1]) {
             color[0] = true
+            document.getElementById(color[1]).style.color = color[1]
         }
         else {
             color[0] = false
+            document.getElementById(color[1]).style.color = "white"
         }
     })
 }
@@ -50,6 +53,7 @@ document.getElementById("red").onclick = () => setColor("red")
 document.getElementById("white").onclick = () => setColor("white")
 document.getElementById("yellow").onclick = () => setColor("yellow")
 
+// draws the initial snake location
 
 export const drawSnake = (gameBoard) => {
     const snakeElement = document.createElement("div")
@@ -58,6 +62,7 @@ export const drawSnake = (gameBoard) => {
     colors.map(color => {
         if (color[0]) {
             snakeElement.style.backgroundColor = color[1]
+
         }
     })
     snakeElement.classList.add("snake")

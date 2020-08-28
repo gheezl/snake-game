@@ -1,4 +1,4 @@
-import { SNAKE_SPEED, updateSnake, drawSnake, getSnakeHead } from "./snake.js"
+import { updateSnake, drawSnake, getSnakeHead } from "./snake.js"
 import { updateFood, drawFood, score } from "./food.js"
 import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
@@ -7,8 +7,22 @@ import { displayScore } from "./score.js"
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById("game-board")
+let gameSpeed = 50
+
+const setSpeed = (speed, difficulty) => {
+    gameSpeed = speed
+    document.getElementById(difficulty[1]).style.color = "white"
+    document.getElementById(difficulty[2]).style.color = "white"
+    document.getElementById(difficulty[0]).style.color = "red"
+}
+
+document.getElementById("easy").onclick = () => setSpeed(25, ["easy", "normal", "hard"])
+document.getElementById("normal").onclick = () => setSpeed(50, ["normal", "easy", "hard"])
+document.getElementById("hard").onclick = () => setSpeed(75, ["hard", "easy", "normal"])
+
 
 // game loop
+
 
 const main = (currentTime) => {
     if (gameOver) {
@@ -21,7 +35,8 @@ const main = (currentTime) => {
     window.requestAnimationFrame(main)
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
 
-    if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
+
+    if (secondsSinceLastRender < 1 / gameSpeed) return
 
     lastRenderTime = currentTime
 

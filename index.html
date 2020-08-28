@@ -103,6 +103,18 @@
         gap: 10px;
         margin-top: 25px;
     }
+
+    .difficulty-border {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .difficulty {
+        margin-top: 50px;
+    }
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
 
@@ -126,7 +138,7 @@
     <div class="other">
         <div class="score-board">
             <h1 class="your-score">Your score :</h1>
-            <h1 onclick="changeBoxGlow()" class="score" id="score"></h1>
+            <h1 class="score" id="score"></h1>
         </div>
         <div class="settings">
             <h3>Choose your color</h3>
@@ -136,6 +148,12 @@
             <span id="red">Red</span>
             <span id="white">White</span>
             <span id="yellow">Yellow</span>
+        </div>
+        <div class="difficulty-border">
+            <h3 class="difficulty">Set your difficulty</h3>
+            <span id="easy">Easy</span>
+            <span id="normal">Normal</span>
+            <span id="hard">Hard</span>
         </div>
     </div>
 </body>
