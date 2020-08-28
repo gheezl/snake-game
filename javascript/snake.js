@@ -23,11 +23,37 @@ export const updateSnake = () => {
 
 // draws the initial snake location
 
+
+
+const colors = [
+    [false, "lightgreen"],
+    [true, "lightblue"],
+    [false, "red"],
+    [false, "white"],
+    [false, "yellow"]
+]
+
+const setColor = (input) => {
+    colors.map(color => {
+        if (input === color[1]) {
+            color[0] = true
+        }
+    })
+}
+
+setColor("white")
+
 export const drawSnake = (gameBoard) => {
     const snakeElement = document.createElement("div")
     snakeElement.style.gridRowStart = snakeBody.y
     snakeElement.style.gridColumnStart = snakeBody.x
+    colors.map(color => {
+        if (color[0]) {
+            snakeElement.style.backgroundColor = color[1]
+        }
+    })
     snakeElement.classList.add("snake")
+    snakeElement.id = "snake"
     gameBoard.appendChild(snakeElement)
 }
 
