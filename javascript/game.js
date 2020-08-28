@@ -46,6 +46,7 @@ const main = (currentTime) => {
     draw()
     checkDeath()
     displayScore()
+    // displayHighScore()
 }
 
 // initial run of the game loop

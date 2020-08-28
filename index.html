@@ -17,11 +17,14 @@
         <span class="welcome">
             The goal of this game is to collect as many rings as possible, as quickly as possible.
             If you touch a red dot or hit the sides of the game board, then you lose the game.
+            Your high score will be saved to your browsers local storage.
+            Use your arrow keys to move the square around the board.
         </span>
-        <span class="welcome">
-            If you create an account and sign in, then your high score will be saved automatically.
-        </span>
-        <span class="instructions">Use your arrow keys to move the square around the board.</span>
+        <div class="code">
+            <h3>
+                <a href="https://github.com/gheezl/snake-game">View code</a>
+            </h3>
+        </div>
     </header>
 
     <div id="game-board"></div>
@@ -29,7 +32,11 @@
     <div class="other">
         <div class="score-board">
             <h1 class="your-score">Your score :</h1>
-            <h1 class="score" id="score"></h1>
+            <h1 id="score"></h1>
+        </div>
+        <div class="score-board">
+            <h1 class="your-score">Your high score :</h1>
+            <h1 id="high-score"></h1>
         </div>
         <div class="settings">
             <h3>Choose your color</h3>
@@ -45,11 +52,6 @@
             <span id="easy">Easy</span>
             <span id="normal">Normal (default)</span>
             <span id="hard">Hard</span>
-        </div>
-        <div class="code">
-            <h3>
-                <a href="https://github.com/gheezl/snake-game">View code</a>
-            </h3>
         </div>
     </div>
 </body>

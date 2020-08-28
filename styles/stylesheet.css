@@ -78,6 +78,12 @@
         margin-top: 25px;
     }
 
+    .high-score-board {
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+    }
+
     .your-score {
         margin-right: 10px;
     }
