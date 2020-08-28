@@ -94,15 +94,17 @@
     .score {
         margin-right: 10px;
     }
+
+    .settings {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        gap: 10px;
+        margin-top: 25px;
+    }
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
-<script>
-    // const changeBoxGlow = () => {
-    //     console.log("Hello")
-    //     document.getElementById("snake").style.backgroundColor = "red"
-    // }
-</script>
-
 
 <body>
     <header class="header">
@@ -124,7 +126,16 @@
     <div class="other">
         <div class="score-board">
             <h1 class="your-score">Your score :</h1>
-            <h1 class="score" id="score"></h1>
+            <h1 onclick="changeBoxGlow()" class="score" id="score"></h1>
+        </div>
+        <div class="settings">
+            <h3>Choose your color</h3>
+            <span id="black">Black</span>
+            <span id="lightgreen">Light Green</span>
+            <span id="lightblue">Light Blue</span>
+            <span id="red">Red</span>
+            <span id="white">White</span>
+            <span id="yellow">Yellow</span>
         </div>
     </div>
 </body>

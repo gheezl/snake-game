@@ -21,13 +21,12 @@ export const updateSnake = () => {
     snakeBody.y += inputDirection.y
 }
 
-// draws the initial snake location
-
-
+// draws the initial snake location and sets the color
 
 const colors = [
+    [false, "black"],
     [false, "lightgreen"],
-    [true, "lightblue"],
+    [false, "lightblue"],
     [false, "red"],
     [false, "white"],
     [false, "yellow"]
@@ -38,10 +37,19 @@ const setColor = (input) => {
         if (input === color[1]) {
             color[0] = true
         }
+        else {
+            color[0] = false
+        }
     })
 }
 
-setColor("white")
+document.getElementById("black").onclick = () => setColor("black")
+document.getElementById("lightblue").onclick = () => setColor("lightblue")
+document.getElementById("lightgreen").onclick = () => setColor("lightgreen")
+document.getElementById("red").onclick = () => setColor("red")
+document.getElementById("white").onclick = () => setColor("white")
+document.getElementById("yellow").onclick = () => setColor("yellow")
+
 
 export const drawSnake = (gameBoard) => {
     const snakeElement = document.createElement("div")
