@@ -7,114 +7,7 @@
     <title>Snake</title>
 </head>
 <style>
-    @font-face {
-        font-family: 'Eight Bit Dragon Regular';
-        font-style: normal;
-        font-weight: normal;
-        src: local('Eight Bit Dragon Regular'), url('eight-bit-dragon.woff') format('woff');
-    }
-
-    body {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        margin: 0;
-        background-color: #071225;
-        font-family: 'Eight Bit Dragon Regular';
-    }
-
-    #game-board {
-        display: grid;
-        grid-column-start: 2;
-        grid-template-rows: repeat(50, 1fr);
-        grid-template-columns: repeat(50, 1fr);
-        background-color: #152642;
-        border: 2px solid #2F4562;
-        height: 50vw;
-        width: 50vw;
-    }
-
-    .snake {
-        background-color: black;
-        box-shadow: 0 0 5px lightblue;
-    }
-
-    .food {
-        border: 2px solid white;
-        border-radius: 100%;
-        box-shadow: 0 0 30px white;
-    }
-
-    .obsticale {
-        border: 2px solid red;
-        border-radius: 100%;
-        background-color: red;
-        box-shadow: 0 0 5px black;
-    }
-
-    .header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        grid-column-start: 1;
-        color: white;
-        margin-top: 25px;
-        background-color: #071225;
-    }
-
-    .welcome {
-        padding: 25px;
-    }
-
-    .other {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #071225;
-        color: white;
-    }
-
-    .arrows {
-        margin-top: 50px;
-    }
-
-    .instructions {
-        padding: 25px;
-    }
-
-    .score-board {
-        display: flex;
-        flex-direction: row;
-        margin-top: 25px;
-    }
-
-    .your-score {
-        margin-right: 10px;
-    }
-
-    .score {
-        margin-right: 10px;
-    }
-
-    .settings {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        cursor: pointer;
-        gap: 10px;
-        margin-top: 25px;
-    }
-
-    .difficulty-border {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-    }
-
-    .difficulty {
-        margin-top: 50px;
-    }
+    @import url('./styles/stylesheet.css');
 </style>
 <script src="./javascript/game.js" defer type="module"></script>
 
@@ -128,9 +21,7 @@
         <span class="welcome">
             If you create an account and sign in, then your high score will be saved automatically.
         </span>
-        <!-- <img class="arrows" src="Arrow_keys.svg.png" width="250px" /> -->
         <span class="instructions">Use your arrow keys to move the square around the board.</span>
-
     </header>
 
     <div id="game-board"></div>
@@ -152,8 +43,13 @@
         <div class="difficulty-border">
             <h3 class="difficulty">Set your difficulty</h3>
             <span id="easy">Easy</span>
-            <span id="normal">Normal</span>
+            <span id="normal">Normal (default)</span>
             <span id="hard">Hard</span>
+        </div>
+        <div class="code">
+            <h3>
+                <a href="https://github.com/gheezl/snake-game">View code</a>
+            </h3>
         </div>
     </div>
 </body>
