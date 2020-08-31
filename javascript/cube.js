@@ -33,9 +33,15 @@ const colors = [
     [false, "yellow"]
 ]
 
+const previousColor = localStorage.getItem("set-color")
+if (previousColor) {
+    document.getElementById(previousColor).style.color = previousColor
+}
+
 const setColor = (input) => {
     colors.map(color => {
         if (input === color[1]) {
+            localStorage.setItem("set-color", input)
             color[0] = true
             document.getElementById(color[1]).style.color = color[1]
         }
@@ -59,6 +65,7 @@ export const drawSnake = (gameBoard) => {
     const snakeElement = document.createElement("div")
     snakeElement.style.gridRowStart = snakeBody.y
     snakeElement.style.gridColumnStart = snakeBody.x
+    snakeElement.style.backgroundColor = previousColor
     colors.map(color => {
         if (color[0]) {
             snakeElement.style.backgroundColor = color[1]

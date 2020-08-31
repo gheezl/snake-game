@@ -10,9 +10,24 @@ const gameBoard = document.getElementById("game-board")
 let gameSpeed = 50
 
 // this sets the difficulty
+// localStorage.removeItem("set-difficulty")
+// localStorage.removeItem("set-speed")
+
+const previousDifficulty = localStorage.getItem("set-difficulty")
+const previousSpeed = localStorage.getItem("set-speed")
+
+if (previousDifficulty && previousSpeed) {
+    console.log(previousDifficulty, previousSpeed)
+    gameSpeed = previousSpeed
+    document.getElementById(previousDifficulty.toString()).style.color = "red"
+}
+
 
 const setSpeed = (speed, difficulty) => {
+    console.log(speed, difficulty)
     gameSpeed = speed
+    localStorage.setItem("set-difficulty", difficulty[0])
+    localStorage.setItem("set-speed", speed)
     document.getElementById(difficulty[1]).style.color = "white"
     document.getElementById(difficulty[2]).style.color = "white"
     document.getElementById(difficulty[0]).style.color = "red"
@@ -46,7 +61,6 @@ const main = (currentTime) => {
     draw()
     checkDeath()
     displayScore()
-    // displayHighScore()
 }
 
 // initial run of the game loop
