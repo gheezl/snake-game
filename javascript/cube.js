@@ -1,25 +1,19 @@
 import { getInputDirection } from "./input.js"
 
-// a few variables
+// initail cube location
 
-// export const snakeSpeed = 50
-
-
-
-// initail snake location
-
-const snakeBody = { x: 25, y: 25 }
+const cubeBody = { x: 25, y: 25 }
 
 // updates the snake location
 
-export const updateSnake = () => {
+export const updateCube = () => {
     const inputDirection = getInputDirection()
-    for (let i = snakeBody.length - 2; i >= 0; i--) {
-        snakeBody[i + 1] = { ...snakeBody[i] }
+    for (let i = cubeBody.length - 2; i >= 0; i--) {
+        cubeBody[i + 1] = { ...snakeBody[i] }
     }
 
-    snakeBody.x += inputDirection.x
-    snakeBody.y += inputDirection.y
+    cubeBody.x += inputDirection.x
+    cubeBody.y += inputDirection.y
 }
 
 // sets the color
@@ -61,26 +55,26 @@ document.getElementById("yellow").onclick = () => setColor("yellow")
 
 // draws the initial snake location
 
-export const drawSnake = (gameBoard) => {
-    const snakeElement = document.createElement("div")
-    snakeElement.style.gridRowStart = snakeBody.y
-    snakeElement.style.gridColumnStart = snakeBody.x
-    snakeElement.style.backgroundColor = previousColor
+export const drawCube = (gameBoard) => {
+    const cubeElement = document.createElement("div")
+    cubeElement.style.gridRowStart = cubeBody.y
+    cubeElement.style.gridColumnStart = cubeBody.x
+    cubeElement.style.backgroundColor = previousColor
     colors.map(color => {
         if (color[0]) {
-            snakeElement.style.backgroundColor = color[1]
+            cubeElement.style.backgroundColor = color[1]
 
         }
     })
-    snakeElement.classList.add("snake")
-    snakeElement.id = "snake"
-    gameBoard.appendChild(snakeElement)
+    cubeElement.classList.add("cube")
+    cubeElement.id = "cube"
+    gameBoard.appendChild(cubeElement)
 }
 
 // checks if the square is on anything
 
-export const onSnake = (position) => {
-    return equalPositions(snakeBody, position)
+export const onCube = (position) => {
+    return equalPositions(cubeBody, position)
 }
 
 export const equalPositions = (position1, position2) => {
@@ -90,5 +84,5 @@ export const equalPositions = (position1, position2) => {
 // simply returns the head of the snake
 
 export const getSnakeHead = () => {
-    return snakeBody
+    return cubeBody
 }

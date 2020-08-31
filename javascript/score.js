@@ -1,4 +1,4 @@
-import { score } from "./food.js"
+import { score } from "./ring.js"
 
 const scoreBoard = document.getElementById("score")
 const highScoreBoard = document.getElementById("high-score")

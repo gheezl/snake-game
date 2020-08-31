@@ -1,5 +1,5 @@
-import { updateSnake, drawSnake, getSnakeHead } from "./cube.js"
-import { updateFood, drawFood, score } from "./food.js"
+import { updateCube, drawCube, getSnakeHead } from "./cube.js"
+import { updateRing, drawRing, score } from "./ring.js"
 import { drawObsticale, checkObsticale } from "./obsticales.js"
 import { outSideGrid } from "./grid.js"
 import { displayScore } from "./score.js"
@@ -10,21 +10,17 @@ const gameBoard = document.getElementById("game-board")
 let gameSpeed = 50
 
 // this sets the difficulty
-// localStorage.removeItem("set-difficulty")
-// localStorage.removeItem("set-speed")
 
 const previousDifficulty = localStorage.getItem("set-difficulty")
 const previousSpeed = localStorage.getItem("set-speed")
 
 if (previousDifficulty && previousSpeed) {
-    console.log(previousDifficulty, previousSpeed)
     gameSpeed = previousSpeed
     document.getElementById(previousDifficulty.toString()).style.color = "red"
 }
 
 
 const setSpeed = (speed, difficulty) => {
-    console.log(speed, difficulty)
     gameSpeed = speed
     localStorage.setItem("set-difficulty", difficulty[0])
     localStorage.setItem("set-speed", speed)
@@ -70,16 +66,16 @@ window.requestAnimationFrame(main)
 // updates everything
 
 const update = () => {
-    updateSnake()
-    updateFood()
+    updateCube()
+    updateRing()
 }
 
 // draws everything
 
 const draw = () => {
     gameBoard.innerHTML = ''
-    drawSnake(gameBoard)
-    drawFood(gameBoard)
+    drawCube(gameBoard)
+    drawRing(gameBoard)
     drawObsticale(gameBoard)
 }
 

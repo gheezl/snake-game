@@ -13,6 +13,17 @@
         font-family: 'Eight Bit Dragon Regular';
     }
 
+    a {
+        text-decoration: none;
+        color: lightblue;
+        padding: 5px;
+        transition: 0.5s;
+    }
+
+    a:hover {
+        border-bottom: 5px solid lightblue ;
+    }
+
     #game-board {
         display: grid;
         grid-column-start: 2;
@@ -24,7 +35,7 @@
         width: 50vw;
     }
 
-    .snake {
+    .cube {
         background-color: black;
         box-shadow: 0 0 5px lightblue;
     }

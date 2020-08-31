@@ -1,4 +1,4 @@
-import { onSnake } from "./cube.js"
+import { onCube } from "./cube.js"
 
 // these are the obsticale positions
 
@@ -16,7 +16,7 @@ export const checkObsticale = () => {
     let isOnObsticale = false
 
     obsticalePositions.map(obsticalePosition => {
-        if (onSnake(obsticalePosition)) return isOnObsticale = true
+        if (onCube(obsticalePosition)) isOnObsticale = true
 
         return false
     })
